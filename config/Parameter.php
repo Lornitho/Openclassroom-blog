@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\config;
+
 
 class Parameter
 {
@@ -13,16 +15,14 @@ class Parameter
 
     public function get($name)
     {
-        
         if(isset($this->parameter[$name]))
         {
             return $this->parameter[$name];
         }
     }
-    
+
     public function set($name, $value)
     {
         $this->parameter[$name] = $value;
     }
-
 }

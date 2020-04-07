@@ -1,16 +1,17 @@
 <?php
 
-namespace App\src\model;
 
+namespace App\src\Model;
 use App\config\Request;
+
 
 class View
 {
     private $file;
-    public $title;
+    private $title;
     private $request;
-    public $session;
-    
+    private $session;
+
     public function __construct()
     {
         $this->request = new Request();
@@ -22,8 +23,8 @@ class View
         $this->file = '../templates/'.$template.'.php';
         $content  = $this->renderFile($this->file, $data);
         $view = $this->renderFile('../templates/base.php', [
-            'titre' => $this->title,
-            'description' => $content,
+            'title' => $this->title,
+            'content' => $content,
             'session' => $this->session
         ]);
         echo $view;
@@ -39,4 +40,5 @@ class View
         }
         header('Location: index.php?route=notFound');
     }
+
 }

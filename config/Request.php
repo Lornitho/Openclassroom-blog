@@ -7,36 +7,33 @@ class Request
     private $get;
     private $post;
     private $session;
-    
+
     public function __construct()
     {
         $this->get = new Parameter($_GET);
-       $this->post = $_POST;
-       /*$this->session = $_SESSION;*/
-
-      /* $this->post = new Parameter($_POST); */
-       $this->session = new Session($_SESSION);
+        $this->post = new Parameter($_POST);
+        $this->session = new Session($_SESSION);
     }
-    
-     /**
+
+    /**
      * @return Parameter
      */
     public function getGet()
     {
         return $this->get;
     }
-    
+
     /**
-    * @return mixed
-    */
+     * @return Parameter
+     */
     public function getPost()
     {
         return $this->post;
     }
-    
+
     /**
-    * @return mixed
-    */
+     * @return Session
+     */
     public function getSession()
     {
         return $this->session;

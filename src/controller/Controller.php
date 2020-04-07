@@ -2,16 +2,19 @@
 
 namespace App\src\controller;
 
+use App\src\Manager\Article;
+use App\src\Manager\Comment;
+use App\src\Manager\User;
 use App\config\Request;
-use App\src\DAO\ArticleDAO;
-use App\src\DAO\CommentDAO;
 use App\src\model\View;
+
 
 abstract class Controller
 {
-    private $articleDAO;
-    private $commentDAO;
-    private $view;
+    protected $article;
+    protected $comment;
+    protected $user;
+    protected $view;
     private $request;
     protected $get;
     protected $post;
@@ -19,8 +22,9 @@ abstract class Controller
 
     public function __construct()
     {
-        $this->articleDAO = new ArticleDAO();
-        $this->commentDAO = new CommentDAO();
+        $this->article = new Article();
+        $this->comment = new Comment();
+        $this->user = new User();
         $this->view = new View();
         $this->request = new Request();
         $this->get = $this->request->getGet();

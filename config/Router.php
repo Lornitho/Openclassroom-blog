@@ -1,4 +1,5 @@
 <?php
+
 namespace App\config;
 use App\src\controller\BackController;
 use App\src\controller\ErrorController;
@@ -8,50 +9,59 @@ use Exception;
 class Router
 {
     private $frontController;
-    private $backController;
     private $errorController;
+    private $backController;
     private $request;
-    
+
     public function __construct()
     {
         $this->request = new Request();
         $this->frontController = new FrontController();
         $this->backController = new BackController();
         $this->errorController = new ErrorController();
-        
     }
+
     public function run()
     {
-        $this->request->getSession()->set('test', 'value');
-        var_dump($this->request->getSession()->get('test'));
-    
-        
-        
-        
         $route = $this->request->getGet()->get('route');
-        
-
         try{
             if(isset($route))
             {
-                if($route=== 'billet'){
+                if($route === 'article'){
                     $this->frontController->article($this->request->getGet()->get('articleId'));
                 }
-                elseif($route === 'addArticle'){
+                elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
                 }
-
+                elseif ($route === 'editArticle'){
+                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                }
+                elseif($route === 'deleteArticle'){
+                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                }
+                elseif($route === 'addComment'){
+                    $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                }
+                elseif($route === 'flagComment'){
+                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
+                }
+                elseif($route === 'deleteComment'){
+                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                }   
+                elseif($route === 'register'){
+                    $this->frontController->register($this->request->getPost());
+                }
                 else{
-                    echo 'page inconnue';
+                    $this->errorController->errorNotFound();
                 }
             }
             else{
-                require '../templates/home.php';
+                $this->frontController->home();
             }
         }
         catch (Exception $e)
         {
-            echo 'Erreur';
+            $this->errorController->errorServer();
         }
     }
 }
