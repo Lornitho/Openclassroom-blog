@@ -47,4 +47,26 @@ class FrontController extends Controller
         }
         return $this->view->render('register');
     }
+    public function login(Parameter $post)
+    {
+        if($post->get('submit')) {
+            $result = $this->user->login($post);
+            if($result ['isPasswordValid']) {
+                $this->session->set('login', 'Content de vous revoir');
+                $this->session->set('id', $result['result']->id);
+                $this->session->set('username', $post->get('username'));
+                header('Location: ../public/index.php');
+            }
+            else {
+                $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
+                return $this->view->render('login', [
+                    'post'=> $post
+                ]);
+            }
+        }
+        return $this->view->render('login');
+    }
+    public function contact(){
+        mail('alemanpierre@gmail.com', 'formulaire de contact','test');
+    }
 }

@@ -22,11 +22,22 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Billets</a>
+                </li>
+                <?php if ($this->session->get('username')) { ?>
+                    <li class="nav-item">
+                          <a class="nav-link" href="../public/index.php?route=profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/index.php?route=logout">Déconnexion</a>
+                    </li>
+                <?php } else{ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="../public/index.php?route=register">Inscription</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href ="../public/index.php?route=login">Connexion</a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

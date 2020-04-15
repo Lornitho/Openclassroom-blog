@@ -41,7 +41,7 @@ class Article extends Database
 
     public function addArticle(Parameter $post)
     {
-        $sql = 'INSERT INTO article (title, content, createdAt) VALUES (?, ?, NOW())';
+        $sql = 'INSERT INTO article (titre, content, createdAt) VALUES (?, ?, NOW())';
         $this->createQuery($sql, [$post->get('title'), $post->get('content')]);
     }
     public function editArticle(Parameter $post, $articleId)

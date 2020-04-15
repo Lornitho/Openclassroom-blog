@@ -87,4 +87,5 @@ class User
     {
         $this->mail = $mail;
     }
+    
 }
