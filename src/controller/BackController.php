@@ -15,6 +15,13 @@ class BackController extends Controller
             'comments' => $comments
         ]);
     }
+    public function showAllArticles()
+    {
+        $articles = $this->article->getArticles();
+        return $this->view->render('articles', [
+            'articles' => $articles,
+        ]);
+    }
         
         
         public function addArticle(Parameter $post)

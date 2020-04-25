@@ -16,6 +16,20 @@ class Article extends Database
         $article->setCreatedAt($row->createdAt);
         return $article;
     }
+    /*
+    public function home()
+    {
+        $sql = 'SELECT * FROM article ORDER BY id DESC LIMIT 3';
+        $result = $this->createQuery($sql);
+        $articles = [];
+        foreach ($result as $row){
+            $articleId = $row->id;
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+*/
 
     public function getArticles()
     {

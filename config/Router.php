@@ -30,6 +30,7 @@ class Router
                 if($route === 'article'){
                     $this->frontController->article($this->request->getGet()->get('articleId'));
                 }
+             
                 elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
                 }
@@ -52,7 +53,7 @@ class Router
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 } 
                 elseif($route === 'contact'){
-                    $this->frontController->contact();
+                    $this->frontController->contact($this->request->getPost());
                 }   
                 elseif($route === 'register'){
                     $this->frontController->register($this->request->getPost());
@@ -71,6 +72,9 @@ class Router
                 }
                 elseif($route === 'administration'){
                     $this->backController->administration();
+                }
+                elseif ($route === 'articles'){
+                    $this->backController->showAllArticles();
                 }
                 else{
                     $this->errorController->errorNotFound();

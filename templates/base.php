@@ -21,11 +21,14 @@
                     <a class="nav-link" href="../public/index.php">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Billets</a>
+                    <a class="nav-link" href="../public/index.php?route=articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../public/index.php?route=contact">Contact</a>
                 </li>
                 <?php if ($this->session->get('username')) { ?>
                     <li class="nav-item">
-                          <a class="nav-link" href="../public/index.php?route=profile">Profile</a>
+                          <a class="nav-link" href="../public/index.php?route=administration">Admin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../public/index.php?route=logout">Déconnexion</a>
