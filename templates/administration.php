@@ -7,7 +7,7 @@
 <div class="container">
 <h2>Articles</h2>
     <a href="../public/index.php?route=addArticle">Nouvel article</a>
-    <table class="table">
+    <table class="table table-bordered">
         <tr>
             <td>Id</td>
             <td>Titre</td>
@@ -37,13 +37,13 @@
 
 
 <h2>Commentaires signalés</h2>
-<table>
+<table class="table table-bordered">
     <tr>
-        <td>Id</td>
-        <td>Pseudo</td>
-        <td>Message</td>
-        <td>Date</td>
-        <td>Actions</td>
+        <th scope="col">Id</th>
+        <th scope="col">Pseudo</th>
+        <th scope="col">Message</th>
+        <th scope="col">Date</th>
+        <th scope="col">Actions</td>
     </tr>
     <?php
     foreach ($comments as $comment)

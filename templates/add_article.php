@@ -4,6 +4,7 @@
 	<script>tinymce.init({selector:'textarea'});</script>
 </header>
 <?php $this->title = "Nouvel article"; ?>
+<div class="container">
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>
@@ -15,4 +16,5 @@
         <input type="submit" value="Envoyer" id="submit" name="submit">
     </form>
     <a href="../public/index.php">Retour à l'accueil</a>
+</div>
 </div>
