@@ -1,9 +1,9 @@
 <?php
 
 namespace App\config;
-use App\src\controller\BackController;
-use App\src\controller\ErrorController;
-use App\src\controller\FrontController;
+use App\src\Controller\BackController;
+use App\src\Controller\ErrorController;
+use App\src\Controller\FrontController;
 use Exception;
 
 class Router

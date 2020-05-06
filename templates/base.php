@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title><?= $title ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel ="icon" type="image/jpg" href ="public/img/writter.jpg"/>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">

@@ -12,12 +12,13 @@
     </div>
   </div>
   <div class="container mt-3">
-  <div class="jumbotron">
-  <h4>Qui suis-je ?</h4>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur voluptatum deserunt, quasi deleniti dolore nobis odit 
-  impedit dolorum vitae velit odio labore, nihil quisquam aperiam ducimus, autem quia hic Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid sed illo! Quaerat architecto ab ad ullam unde mollitia,
-   debitis nesciunt reprehenderit iure ipsa? Animi repudiandae quis voluptatibus saepe nostrum.
-  </div>
+    <div class="jumbotron">
+      <h4>Qui suis-je ?</h4>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur voluptatum deserunt, quasi deleniti dolore nobis odit 
+        impedit dolorum vitae velit odio labore, nihil quisquam aperiam ducimus, autem quia hic Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid sed illo! Quaerat architecto ab ad ullam unde mollitia,
+        debitis nesciunt reprehenderit iure ipsa? Animi repudiandae quis voluptatibus saepe nostrum.
+        Phasellus vulputate suscipit libero, sed porta nisi. Nulla nibh eros, pretium vitae lorem ut, tincidunt euismod urna. Pellentesque vestibulum ultricies odio in accumsan. Curabitur dolor sapien, varius quis orci sit amet, ultricies faucibus quam. Phasellus tellus arcu, sodales in felis non, hendrerit laoreet ex. Suspendisse potenti. Maecenas vel lectus ut metus mollis tincidunt eget sed arcu. Sed volutpat, nisl ac placerat eleifend, leo quam accumsan elit, ac luctus risus sem id turpis. Duis in tempor sem. Aliquam vitae tempus ante. Maecenas elementum mi ut diam faucibus, eget luctus felis semper. Ut eget purus vitae sem aliquet aliquet sed eu ex. In et luctus magna.
+    </div>
   </div>
 </div>
     <?= $this->session->show('add_article'); ?>

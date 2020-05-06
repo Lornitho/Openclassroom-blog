@@ -6,7 +6,7 @@
 <?= $this->session->show('delete_comment'); ?>
 <div class="container">
 <h2>Articles</h2>
-    <a href="../public/index.php?route=addArticle">Nouvel article</a>
+    <a href="../public/index.php?route=addArticle " class="btn btn-warning">Nouvel article</a><a href="../public/index.php?route=profile"class="btn btn-danger">Modifier profile</a>
     <table class="table table-bordered">
         <tr>
             <td>Id</td>
@@ -23,10 +23,12 @@
                 <td><?= htmlspecialchars($article->getId());?></td>
                 <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
                 <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
-                <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+                <td><em>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></em></td>
                 <td>
-                    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a></li>
+                        <li class="list-group-item"><a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a></li>
+                    </ul>
                 </td>
             </tr>
             <?php
@@ -55,8 +57,10 @@
             <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
             <td>
-                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler</a></li>
+                <li class="list-group-item"><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></li>
+                </ul>
             </td>
         </tr>
         <?php

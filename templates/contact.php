@@ -1,7 +1,14 @@
 <?php $this->title = "contact"; ?>
 <div class="container">
-    <h4>Contact</h4>
-    <p>Si vous voulez contacer l'auteur veuillez saisir votre message.</p>
+    <br>
+    <div class="form-group row">
+        <div class="col-12">
+            <h2 class="row">Contact</h2>
+        </div>
+        <div class="col-12">   
+            <p class="row">Si vous voulez contacer l'auteur veuillez saisir votre message.</p>
+        </div>
+    </div>
     <?= $this->session->show('error_login'); ?>
         <form method="post" action="../public/index.php?route=contact">
         

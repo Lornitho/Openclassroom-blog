@@ -1,5 +1,5 @@
 <?php
-namespace App\src\controller;
+namespace App\src\Controller;
 
 use App\config\Parameter;
 
@@ -54,8 +54,9 @@ class FrontController extends Controller
             {
                 if($post->get('submit')) {
                     $result = $this->user->login($post);
+                    
                     if($result ['isPasswordValid']) {
-                        $this->session->set('login', 'Content de vous revoir');
+                       $this->session->set('login', 'Content de vous revoir');
                         $this->session->set('id', $result['result']->id);
                         $this->session->set('username', $post->get('username'));
                         header('Location: ../public/index.php');
@@ -81,3 +82,4 @@ class FrontController extends Controller
                         return $this->view->render('contact');
                     } 
             }
+            ?>

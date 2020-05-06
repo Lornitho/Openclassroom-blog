@@ -1,12 +1,12 @@
 <?php
 
-namespace App\src\controller;
+namespace App\src\Controller;
 
 use App\src\Manager\Article;
 use App\src\Manager\Comment;
 use App\src\Manager\User;
 use App\config\Request;
-use App\src\model\View;
+use App\src\Model\View;
 
 
 abstract class Controller

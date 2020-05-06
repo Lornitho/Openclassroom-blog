@@ -1,6 +1,6 @@
 <?php
 
-namespace App\src\controller;
+namespace App\src\Controller;
 
 use App\config\Parameter;
 

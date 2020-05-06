@@ -2,6 +2,14 @@
 <br>
 <div class="container">
   <div class="row">
+    <div class="row">
+      <div class="col-12">
+                <h2 class="row">Liste des articles</h2>
+      </div>
+      <div class="col-12">   
+        <p class="row">Vous pouvez consulter l'ensemble des articles publiés.</p>
+      </div>
+    </div>      
     <?php
 
 
@@ -14,7 +22,7 @@
             <div class="card-body">
               <h5 class="card-title"><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h5>
               <p class="card-text"><?= substr( htmlspecialchars($article->getContent()), 0, 150); ?></p>
-              <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+              <p><em>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></em></p>
               <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>" class="btn btn-primary">Lire la suite</a>
             </div>
           </div>
