@@ -11,9 +11,15 @@
         <p><em>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></em></p>
         </div>
         <div class="actions">
+        <?php
+        if ($this->session->get('username')) { ?>
             <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?> "class="btn btn-info">Modifier</a>
             <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>"class="btn btn-danger">Supprimer</a>
-        </div>
+            <?php
+        }
+        ?>
+            </div>
+        
         <div class="col-6">
         <h3>Ajouter un commentaire</h3>
         </div>

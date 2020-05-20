@@ -77,6 +77,7 @@ class Router
                     $this->backController->showAllArticles();
                 }
                 else{
+
                     $this->errorController->errorNotFound();
                 }
             }
