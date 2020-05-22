@@ -22,7 +22,7 @@
             <tr>
                 <td><?= htmlspecialchars($article->getId());?></td>
                 <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-                <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
+                <td><?= substr($article->getContent(), 0, 150);?></td>
                 <td><em>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></em></td>
                 <td>
                     <ul class="list-group list-group-flush">
