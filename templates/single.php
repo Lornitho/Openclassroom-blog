@@ -5,7 +5,7 @@
         <h3><?= htmlspecialchars($article->getTitle());?></h3>
         </div>
         <div class="col-12">
-        <p><?= htmlspecialchars($article->getContent());?></p>
+        <p><?= $article->getContent();?></p>
         </div>
         <div class="col-6">
         <p><em>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></em></p>
@@ -13,8 +13,8 @@
         <div class="actions">
         <?php
         if ($this->session->get('username')) { ?>
-            <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?> "class="btn btn-info">Modifier</a>
-            <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>"class="btn btn-danger">Supprimer</a>
+            <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId();?>"class="btn btn-info">Modifier</a>
+            <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId();?>"class="btn btn-danger">Supprimer</a>
             <?php
         }
         ?>
@@ -56,10 +56,11 @@
                 <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>"class="btn btn-warning">Signaler le commentaire</a></p>
                 <?php
             }
-            ?>
+            if ($this->session->get('username')) { ?>
             <p><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"class="btn btn-danger">Supprimer le commentaire</a></p>
             <br>
             <?php
+            }
         }
         ?>
         

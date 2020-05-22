@@ -1,5 +1,5 @@
 <div class="container">
-<form method="post" action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()); ?>">
+<form method="post"action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId());?>">
 <div class="row col-8">
     <label class ="col-2"for="pseudo">Pseudo</label><br>
     <input class ="col-6" type="text" id="pseudo" name="pseudo">

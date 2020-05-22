@@ -25,10 +25,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light bg-dark" href="../public/index.php?route=articles"><i class="fas fa-newspaper"></i> Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light bg-dark" href="../public/index.php?route=contact"><i class="far fa-id-card"></i> Contact</a>
-                </li>
+                </li>               
                 <?php if ($this->session->get('username')) { ?>
                     <li class="nav-item">
                           <a class="nav-link text-light bg-dark" href="../public/index.php?route=administration"><i class="fas fa-tools"></i> Admin</a>

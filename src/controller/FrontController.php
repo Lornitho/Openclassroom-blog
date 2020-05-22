@@ -71,15 +71,5 @@ class FrontController extends Controller
                     return $this->view->render('login');
                 }
             
-            
-                    public function contact(Parameter $post){
-                        if($post->get('submit')) {
-                            $email=$post->get('email');
-                            $name=$post->get('nom');
-                            $message=$post->get('message');
-                            mail("alemanpierre@gmail.com", "Salut tout le monde !", $message);
-                        } 
-                        return $this->view->render('contact');
-                    } 
             }
             ?>

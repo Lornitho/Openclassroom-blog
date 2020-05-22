@@ -2,8 +2,10 @@
 <header>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 	<script>tinymce.init({selector:'textarea'});</script>
+    
 </header>
 <?php $this->title = "Nouvel article"; ?>
+<?= $this->session->show('add_article'); ?>
 <div class="container">
     <div class="row mt-3">
         <div class="col-6">

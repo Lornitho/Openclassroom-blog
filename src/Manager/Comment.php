@@ -33,6 +33,7 @@ class Comment extends Database
     {
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, flag, article_id) VALUES (?, ?, NOW(), ?, ?)';
         $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), 0, $articleId]);
+        
     }
     public function flagComment($commentId)
     {
